@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #020617; /* dark navy */
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Layout */
+.section-container {
+  @apply max-w-7xl mx-auto px-6 md:px-10;
+}
+
+/* Text glow */
+.glow-text {
+  text-shadow: 0 0 12px rgba(34, 211, 238, 0.6);
+}
+
+/* Soft glow box */
+.glow-box {
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.08);
+}
+
+/* Cyber grid background */
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Noise overlay */
+.noise-overlay {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Cyber border effect */
+.cyber-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.45),
+    rgba(74, 222, 128, 0.25),
+    rgba(34, 211, 238, 0.2)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Scan line animation (optional use) */
+.scan-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -20%;
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(34, 211, 238, 0.08),
+    transparent
+  );
+  animation: scan 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  0% {
+    top: -20%;
+  }
+  100% {
+    top: 120%;
+  }
+}
+
+/* Buttons */
+.btn-primary {
+  @apply bg-cyan-400 text-slate-950 px-6 py-3 rounded-xl font-semibold transition hover:bg-cyan-300;
+}
+
+.btn-secondary {
+  @apply border border-cyan-500/30 bg-slate-900 text-cyan-400 px-6 py-3 rounded-xl transition hover:bg-slate-800;
+}
+
+.btn-green {
+  @apply border border-green-400/30 bg-slate-900 text-green-400 px-6 py-3 rounded-xl flex items-center gap-2 transition hover:bg-slate-800;
+}
+
+/* Slow spin animation */
+.animate-spin-slow {
+  animation: spin 20s linear infinite;
+}
