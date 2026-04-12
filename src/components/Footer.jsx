@@ -6,7 +6,7 @@ function Footer() {
 
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/aroshasampath"
             target="_blank"
             rel="noreferrer"
             className="transition hover:text-cyan-400"
@@ -14,7 +14,7 @@ function Footer() {
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/aroshasampath"
             target="_blank"
             rel="noreferrer"
             className="transition hover:text-cyan-400"
@@ -22,7 +22,7 @@ function Footer() {
             LinkedIn
           </a>
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:sampatharosha5@gmail.com"
             className="transition hover:text-cyan-400"
           >
             Email
