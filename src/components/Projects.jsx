@@ -1,21 +1,25 @@
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
+import portfolioImg from "../assets/portfolio.png";
+import crystalBeautyImg from "../assets/crystal-beauty.png";
 
 const projects = [
-  {
-    title: "Port Scanner",
+   {
+    title: "Personal Portfolio Website",
     description:
-      "A Python-based tool for scanning open ports and understanding active services on a target system.",
-    tech: ["Python", "Sockets", "Networking"],
-    github: "https://github.com/yourusername/port-scanner",
+        "A modern cyber-security themed portfolio website built using React and Tailwind CSS, featuring smooth animations, responsive design, and project showcases.",
+    tech: ["React", "Tailwind CSS", "Framer Motion", "UI/UX"],
+    github: "https://github.com/aroshasampath/my-portfolio.git",
+    image: portfolioImg,
   },
- 
+
   {
-    title: "Secure Login UI",
+    title: "Crystal Beauty | E-commerce platform",
     description:
-      "A modern authentication interface with secure form structure and cyber-inspired front-end design.",
-    tech: ["React", "Tailwind CSS", "UI Design"],
-    github: "https://github.com/yourusername/secure-login-ui",
+      "Crystal Beauty is a MERN stack e-commerce application that allows users to browse products and place orders, with a secure authentication system and an admin panel for managing products, users, and orders.",
+    tech: ["React", "Tailwind CSS", "UI Design", "MERN Stack", "JavaScript"],
+    github: "https://github.com/aroshasampath/crystal-frontend.git",
+    image: crystalBeautyImg,
   },
 ];
 
@@ -38,7 +42,13 @@ function Projects() {
               viewport={{ once: true }}
               className="group cyber-border glow-box rounded-3xl bg-slate-900 p-7 transition hover:-translate-y-2"
             >
-              <div className="mb-5 h-40 rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950/30"></div>
+              <div className="mb-5 h-40 overflow-hidden rounded-2xl border border-cyan-500/20">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover"
+                />
+              </div>
 
               <h3 className="mb-4 text-xl font-bold text-white">{project.title}</h3>
 
