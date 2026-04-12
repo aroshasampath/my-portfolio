@@ -81,7 +81,7 @@ function Hero() {
 
           <div className="flex flex-wrap justify-center gap-6 text-2xl text-slate-400">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/aroshasampath"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -91,7 +91,7 @@ function Hero() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/aroshasampath"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
@@ -101,7 +101,7 @@ function Hero() {
             </a>
 
             <a
-              href="mailto:youremail@example.com"
+              href="mailto:sampatharosha5@gmail.com"
               aria-label="Email"
               className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-500/20 bg-slate-900/70 transition hover:border-cyan-400 hover:text-cyan-400"
             >

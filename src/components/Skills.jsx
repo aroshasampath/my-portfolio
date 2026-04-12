@@ -68,7 +68,7 @@ function Skills() {
                   {group.icon}
                 </span>
 
-                <h3 className="bg-gradient-to-r from-green-400 via-cyan-400 to-green-400 bg-clip-text text-transparent tracking-wide">
+                <h3 className="bg-gradient-to-r from-green-400 via-green-400 to-green-400  bg-clip-text text-transparent tracking-wide">
                   {group.title}
                 </h3>
               </div>
