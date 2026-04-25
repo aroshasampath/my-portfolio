@@ -22,7 +22,7 @@ function Navbar() {
           className="flex items-center gap-2 text-xl font-bold text-cyan-400 md:text-2xl"
         >
           <FaShieldAlt className="text-green-400" />
-          <span className="glow-text">arosha</span>
+          <span className="glow-text">asp</span>
         </a>
 
         <ul className="hidden items-center gap-7 text-slate-300 font-medium md:flex">

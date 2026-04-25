@@ -70,7 +70,7 @@ function Hero() {
             </a>
 
             <a
-              href="/cv.pdf"
+              href="/aroshasampathpremathilaka_cv.pdf"
               download
               className="inline-flex items-center gap-2 rounded-xl border border-green-400/30 bg-slate-900/80 px-6 py-3 font-semibold text-green-400 backdrop-blur-md transition hover:bg-slate-800"
             >
