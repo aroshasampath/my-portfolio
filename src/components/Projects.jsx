@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import portfolioImg from "../assets/portfolio.png";
 import crystalBeautyImg from "../assets/crystal-beauty.png";
+import cyberscanImg from "../assets/cyberscanImage.png";
 
 const projects = [
    {
@@ -11,6 +12,15 @@ const projects = [
     tech: ["React", "Tailwind CSS", "Framer Motion", "UI/UX"],
     github: "https://github.com/aroshasampath/my-portfolio.git",
     image: portfolioImg,
+  },
+
+  {
+  title: "Python-based Vulnerability Scanner",
+  description:
+     "CyberScan Pro is a modern Python-based vulnerability scanner with a professional GUI dashboard. The application performs open port scanning, banner grabbing, HTTP security header analysis, multi-threaded scanning, and automated TXT, CSV, HTML, and PDF report generation.",
+  tech: ["Python","CustomTkinter","Socket Programming","Requests","Multi-threading","ReportLab"],
+  github: "https://github.com/aroshasampath/Python-based-vulnerability-scanner.git",
+  image: cyberscanImg,
   },
 
   {
