@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aroshasampath.github.io/my-portfolio/sitemap.xml

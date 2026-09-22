@@ -40,7 +40,7 @@ const skillGroups = [
 
 function Skills() {
   return (
-    <section id="skills" className="border-b border-cyan-500/10 py-20">
+    <section id="skills" aria-label="Skills and Technical Toolkit" className="border-b border-cyan-500/10 py-20">
       <div className="section-container">
         <p className="mb-3 font-semibold text-cyan-400">Skills</p>
         <h2 className="mb-4 text-3xl font-bold md:text-4xl">

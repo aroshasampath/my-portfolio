@@ -12,12 +12,14 @@ function App() {
   return (
     <div className="bg-slate-950 text-white min-h-screen overflow-x-hidden">
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Certifications />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Certifications />
+        <Contact />
+      </main>
       <Footer />
       <BackToTop />
     </div>

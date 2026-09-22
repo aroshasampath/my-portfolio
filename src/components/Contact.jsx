@@ -51,7 +51,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" aria-label="Contact Information and Form" className="py-20">
       <div className="section-container">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-3 font-semibold text-cyan-400">Contact</p>
@@ -72,35 +72,45 @@ function Contact() {
         >
           <h3 className="mb-6 text-center text-2xl font-bold">Send Me a Message</h3>
 
-          <form ref={form} onSubmit={sendEmail} className="space-y-4">
+          <form ref={form} onSubmit={sendEmail} aria-label="Contact form" className="space-y-4">
             <input
+              id="contact-name"
               type="text"
               name="name"
               placeholder="Your Name"
+              autoComplete="name"
+              aria-label="Your Name"
               required
               className="w-full rounded-xl border border-cyan-500/20 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-cyan-400"
             />
 
             <input
+              id="contact-email"
               type="email"
               name="from_email"
               placeholder="Your Email"
+              autoComplete="email"
+              aria-label="Your Email"
               required
               className="w-full rounded-xl border border-cyan-500/20 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-cyan-400"
             />
 
             <input
+              id="contact-subject"
               type="text"
               name="subject"
               placeholder="Subject"
+              aria-label="Subject"
               required
               className="w-full rounded-xl border border-cyan-500/20 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-cyan-400"
             />
 
             <textarea
+              id="contact-message"
               rows="6"
               name="message"
               placeholder="Your Message"
+              aria-label="Your Message"
               required
               className="w-full rounded-xl border border-cyan-500/20 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-cyan-400"
             ></textarea>
@@ -109,6 +119,7 @@ function Contact() {
               <button
                 type="submit"
                 disabled={loading}
+                aria-label="Send email message"
                 className="rounded-xl bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {loading ? "Sending..." : "Send Message"}

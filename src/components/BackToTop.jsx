@@ -16,6 +16,7 @@ function BackToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Scroll to top of page"
       className={`fixed bottom-6 right-6 z-50 rounded-full border border-cyan-500/30 bg-slate-900 p-4 text-cyan-400 shadow-lg transition ${
         visible ? "opacity-100" : "pointer-events-none opacity-0"
       }`}

@@ -93,7 +93,7 @@ const certifications = [
 
 function Certifications() {
   return (
-    <section id="certifications" className="border-b border-cyan-500/10 py-20">
+    <section id="certifications" aria-label="Certifications and Milestones" className="border-b border-cyan-500/10 py-20">
       <div className="section-container">
         <p className="mb-2 font-semibold text-cyan-400">Certifications</p>
 
@@ -103,7 +103,7 @@ function Certifications() {
 
         <div className="space-y-5">
           {certifications.map((cert, index) => (
-            <motion.div
+            <motion.article
               key={index}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -145,14 +145,15 @@ function Certifications() {
                 <a
                   href={cert.link}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
+                  aria-label={`Verify ${cert.title} credential from ${cert.issuer}`}
                   className="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-cyan-300"
                 >
                   View Credential
                   <FaExternalLinkAlt className="text-xs" />
                 </a>
               )}
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

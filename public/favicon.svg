@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#4ade80"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield Background -->
+  <path d="M32 4L10 14V30C10 44.8 19.4 56.4 32 60C44.6 56.4 54 44.8 54 30V14L32 4Z" fill="url(#shieldGrad)" stroke="url(#borderGrad)" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Inner Shield Core -->
+  <path d="M32 12L16 20V31C16 41.5 22.8 50.1 32 53C41.2 50.1 48 41.5 48 31V20L32 12Z" fill="#22d3ee" fill-opacity="0.15"/>
+  <!-- Keyhole / Terminal Lock Mark -->
+  <circle cx="32" cy="28" r="5" fill="#4ade80"/>
+  <path d="M29 32H35L37 42H27L29 32Z" fill="#4ade80"/>
+</svg>

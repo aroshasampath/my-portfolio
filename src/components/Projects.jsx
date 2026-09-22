@@ -35,7 +35,7 @@ const projects = [
 
 function Projects() {
   return (
-    <section id="projects" className="border-b border-cyan-500/10 py-20">
+    <section id="projects" aria-label="Featured Projects" className="border-b border-cyan-500/10 py-20">
       <div className="section-container">
         <p className="mb-3 font-semibold text-cyan-400">Projects</p>
         <h2 className="mb-12 text-3xl font-bold md:text-4xl">
@@ -44,7 +44,7 @@ function Projects() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.article
               key={index}
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +55,9 @@ function Projects() {
               <div className="mb-5 h-40 overflow-hidden rounded-2xl border border-cyan-500/20">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} - Project Showcase by Arosha Sampath`}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -78,13 +80,14 @@ function Projects() {
               <a
                 href={project.github}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label={`View ${project.title} source code on GitHub`}
                 className="inline-flex items-center gap-2 font-medium text-green-400 transition hover:text-cyan-400"
               >
                 <FaGithub />
                 View on GitHub
               </a>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

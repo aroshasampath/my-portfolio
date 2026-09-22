@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function About() {
   return (
-    <section id="about" className="border-b border-cyan-500/10 py-20">
+    <section id="about" aria-label="About Arosha Sampath" className="border-b border-cyan-500/10 py-20">
       <div className="section-container grid items-center gap-10 lg:grid-cols-2">
         
         {/* LEFT */}

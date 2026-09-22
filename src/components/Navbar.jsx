@@ -15,51 +15,56 @@ function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-cyan-500/20 bg-slate-950/80 backdrop-blur-xl">
-      <div className="section-container flex items-center justify-between py-4">
-        <a
-          href="#home"
-          className="flex items-center gap-2 text-xl font-bold text-cyan-400 md:text-2xl"
-        >
-          <FaShieldAlt className="text-green-400" />
-          <span className="glow-text">asp</span>
-        </a>
+    <header className="sticky top-0 z-50">
+      <nav aria-label="Main Navigation" className="border-b border-cyan-500/20 bg-slate-950/80 backdrop-blur-xl">
+        <div className="section-container flex items-center justify-between py-4">
+          <a
+            href="#home"
+            aria-label="Arosha Sampath Portfolio Home"
+            className="flex items-center gap-2 text-xl font-bold text-cyan-400 md:text-2xl"
+          >
+            <FaShieldAlt className="text-green-400" />
+            <span className="glow-text">asp</span>
+          </a>
 
-        <ul className="hidden items-center gap-7 text-slate-300 font-medium md:flex">
-          {navLinks.map((item) => (
-            <li key={item.name}>
-              <a href={item.href} className="transition hover:text-cyan-400">
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        <button
-          onClick={() => setOpen(!open)}
-          className="text-3xl text-cyan-400 md:hidden"
-        >
-          {open ? <HiX /> : <HiMenuAlt3 />}
-        </button>
-      </div>
-
-      {open && (
-        <div className="border-t border-cyan-500/20 bg-slate-950 md:hidden">
-          <div className="section-container flex flex-col gap-4 py-4 text-slate-300">
+          <ul className="hidden items-center gap-7 text-slate-300 font-medium md:flex">
             {navLinks.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="transition hover:text-cyan-400"
-              >
-                {item.name}
-              </a>
+              <li key={item.name}>
+                <a href={item.href} className="transition hover:text-cyan-400">
+                  {item.name}
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
+
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={open}
+            className="text-3xl text-cyan-400 md:hidden"
+          >
+            {open ? <HiX /> : <HiMenuAlt3 />}
+          </button>
         </div>
-      )}
-    </nav>
+
+        {open && (
+          <div aria-label="Mobile Navigation" className="border-t border-cyan-500/20 bg-slate-950 md:hidden">
+            <div className="section-container flex flex-col gap-4 py-4 text-slate-300">
+              {navLinks.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="transition hover:text-cyan-400"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 }
 

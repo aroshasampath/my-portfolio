@@ -7,6 +7,7 @@ function Hero() {
   return (
     <section
       id="home"
+      aria-label="Introduction and Summary"
       className="relative flex min-h-screen items-center overflow-hidden border-b border-cyan-500/10 bg-slate-950"
     >
       <div className="absolute inset-0 cyber-grid opacity-10"></div>
@@ -72,6 +73,7 @@ function Hero() {
             <a
               href="/aroshasampathpremathilaka_cv.pdf"
               download
+              aria-label="Download Arosha Sampath CV (PDF)"
               className="inline-flex items-center gap-2 rounded-xl border border-green-400/30 bg-slate-900/80 px-6 py-3 font-semibold text-green-400 backdrop-blur-md transition hover:bg-slate-800"
             >
               <FaDownload />
@@ -83,8 +85,8 @@ function Hero() {
             <a
               href="https://github.com/aroshasampath"
               target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
+              rel="noopener noreferrer"
+              aria-label="Arosha Sampath on GitHub"
               className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-500/20 bg-slate-900/70 transition hover:border-cyan-400 hover:text-cyan-400"
             >
               <FaGithub />
@@ -93,8 +95,8 @@ function Hero() {
             <a
               href="https://www.linkedin.com/in/aroshasampath"
               target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
+              rel="noopener noreferrer"
+              aria-label="Arosha Sampath on LinkedIn"
               className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-500/20 bg-slate-900/70 transition hover:border-cyan-400 hover:text-cyan-400"
             >
               <FaLinkedin />
@@ -102,7 +104,7 @@ function Hero() {
 
             <a
               href="mailto:sampatharosha5@gmail.com"
-              aria-label="Email"
+              aria-label="Send email to Arosha Sampath"
               className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-500/20 bg-slate-900/70 transition hover:border-cyan-400 hover:text-cyan-400"
             >
               <HiOutlineMail />
