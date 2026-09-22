@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaCertificate, FaExternalLinkAlt } from "react-icons/fa";
+import { FaCertificate, FaExternalLinkAlt, FaAward } from "react-icons/fa";
 
 const certifications = [
   {
@@ -93,69 +93,93 @@ const certifications = [
 
 function Certifications() {
   return (
-    <section id="certifications" aria-label="Certifications and Milestones" className="border-b border-cyan-500/10 py-20">
+    <section id="certifications" aria-label="Certifications and Milestones" className="border-b border-cyan-500/10 py-24 bg-slate-950">
       <div className="section-container">
-        <p className="mb-2 font-semibold text-cyan-400">Certifications</p>
+        
+        {/* Section Header */}
+        <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div>
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-cyan-400">Credentials</p>
+            <h2 className="text-3xl font-extrabold tracking-tight text-white md:text-4xl lg:text-5xl">
+              Professional{" "}
+              <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-green-400 bg-clip-text text-transparent">
+                certifications &amp; milestones
+              </span>
+            </h2>
+          </div>
+          <div className="flex items-center gap-2 rounded-xl border border-cyan-500/20 bg-slate-900/80 px-4 py-2 text-xs font-semibold text-cyan-400">
+            <FaAward className="text-green-400 text-sm" />
+            <span>7 Specialized Certifications</span>
+          </div>
+        </div>
 
-        <h2 className="mb-10 text-3xl font-bold text-white md:text-4xl">
-          Learning milestones and cyber-security achievements
-        </h2>
-
-        <div className="space-y-5">
+        {/* 2-Column Responsive Grid */}
+        <div className="grid gap-6 md:grid-cols-2">
           {certifications.map((cert, index) => (
             <motion.article
               key={index}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.08 }}
+              transition={{ duration: 0.35, delay: (index % 4) * 0.08 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-cyan-500/15 bg-slate-900/80 p-5"
+              className="group flex flex-col justify-between rounded-3xl border border-cyan-500/15 bg-slate-900/70 p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-slate-900/95 hover:shadow-[0_8px_25px_rgba(34,211,238,0.12)]"
             >
-              <div className="mb-4 flex items-start gap-3">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-950 text-cyan-400">
-                  <FaCertificate className="text-xl" />
-                </div>
-
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-lg font-semibold leading-snug text-white">
-                    {cert.title}
-                  </h3>
-
-                  <p className="mt-1 text-sm text-green-400">{cert.issuer}</p>
-                  <p className="mt-1 text-xs text-cyan-400">{cert.year}</p>
-                </div>
-              </div>
-
-              <p className="mb-4 text-sm leading-6 text-slate-300">
-                {cert.description}
-              </p>
-
-              <div className="mb-4 flex flex-wrap gap-2">
-                {cert.skills.map((skill, skillIndex) => (
-                  <span
-                    key={skillIndex}
-                    className="rounded-md bg-slate-950 px-2.5 py-1 text-xs text-slate-300"
-                  >
-                    {skill}
+              <div>
+                {/* Header row */}
+                <div className="mb-4 flex items-start justify-between gap-3">
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-500/20 bg-slate-950 text-cyan-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-cyan-400">
+                      <FaCertificate className="text-lg" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white transition group-hover:text-cyan-400 leading-snug">
+                        {cert.title}
+                      </h3>
+                      <p className="mt-0.5 text-xs font-semibold text-green-400">{cert.issuer}</p>
+                    </div>
+                  </div>
+                  <span className="shrink-0 rounded-full border border-cyan-500/20 bg-slate-950 px-2.5 py-1 text-[11px] font-medium text-cyan-300">
+                    {cert.year}
                   </span>
-                ))}
+                </div>
+
+                {/* Description */}
+                <p className="mb-4 text-xs sm:text-sm leading-relaxed text-slate-300">
+                  {cert.description}
+                </p>
+
+                {/* Skills Chips */}
+                <div className="mb-5 flex flex-wrap gap-1.5">
+                  {cert.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="rounded-lg border border-cyan-500/10 bg-slate-950/80 px-2 py-1 text-[11px] text-slate-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
 
+              {/* Credential Link */}
               {cert.link && cert.link !== "#" && (
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Verify ${cert.title} credential from ${cert.issuer}`}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-cyan-300"
-                >
-                  View Credential
-                  <FaExternalLinkAlt className="text-xs" />
-                </a>
+                <div className="border-t border-cyan-500/10 pt-3">
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Verify ${cert.title} credential from ${cert.issuer}`}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 transition hover:text-cyan-300"
+                  >
+                    <span>Verify Credential</span>
+                    <FaExternalLinkAlt className="text-[10px]" />
+                  </a>
+                </div>
               )}
             </motion.article>
           ))}
         </div>
+
       </div>
     </section>
   );
